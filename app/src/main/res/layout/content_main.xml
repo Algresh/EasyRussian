@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/mainContainer">
+
+            <include layout="@layout/profile_panel"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                style="@style/blockDictionaryMain">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/dictionary_main"/>
+
+                <TextView
+                    android:text="@string/dictionaryLabel"
+                    android:layout_gravity="bottom|left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/dictionaryLabel" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                style="@style/blockStatisticMain">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/statistic3"/>
+
+                <TextView
+                    android:text="@string/statisticProgress"
+                    android:layout_gravity="bottom|left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/statisticProgress"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                style="@style/blockRemindMain">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/reminder"/>
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

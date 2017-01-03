@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EasyRussian</string>
+    <string name="dictionaryLabel">Слов в вашем словаре:</string>
+    <string name="statisticProgress">Статистика прогресса</string>
+    <string name="open"> Открыть </string>
+    <string name="close"> Закрыть </string>
+    <string name="toolbarMain"> Профиль </string>
+</resources>
