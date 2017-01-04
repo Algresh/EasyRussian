@@ -7,9 +7,9 @@ import io.realm.annotations.PrimaryKey;
 public class Word extends RealmObject {
 
     @PrimaryKey
-    protected int id;
-    protected String russianWord;
-    protected String englishWord;
+    private int id;
+    private String russianWord;
+    private String englishWord;
 
     public int getId() {
         return id;

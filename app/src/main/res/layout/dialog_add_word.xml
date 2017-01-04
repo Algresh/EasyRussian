@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/dialogAddWordBlock">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addToDictionary"
+        style="@style/addToDictionary"/>
+
+    <EditText
+        android:id="@+id/russianEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/russianEdt"/>
+
+    <EditText
+        android:id="@+id/englishEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/englishEdt"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnTranslateWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnTranslateWord"
+            style="@style/btnTranslateWord"/>
+
+        <Button
+            android:id="@+id/btnSaveWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnSaveWord"
+            style="@style/btnSaveWord"/>
+
+    </LinearLayout>
+
+</LinearLayout>

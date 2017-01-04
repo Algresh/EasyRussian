@@ -96,4 +96,19 @@
         <item name="android:textSize">12sp</item>
     </style>
 
+    <style name="dialogAddWordBlock">
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="russianEdt">
+        <item name="android:layout_marginTop">32dp</item>
+    </style>
+    <style name="englishEdt"></style>
+    <style name="addToDictionary">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#000</item>
+    </style>
+    <style name="btnTranslateWord"></style>
+    <style name="btnSaveWord"></style>
+
 </resources>

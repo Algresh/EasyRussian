@@ -37,6 +37,11 @@ public class WordCollectionAdapter extends RecyclerView.Adapter<WordCollectionAd
         holder.getEnglishLabel().setText(word.getEnglishWord());
     }
 
+    public void addWord(Word word) {
+        listWords.add(word);
+        notifyItemInserted(listWords.size() - 1);
+    }
+
     @Override
     public int getItemCount() {
         return listWords.size();
