@@ -46,16 +46,16 @@ public class WordCollectionActivity extends AppCompatActivity implements WordCol
                 dialog.show(manager, "manager");
             }
         });
-        initRecyclerView();
+        presenter.showWords(0);
     }
 
 
 
-    protected void initRecyclerView () {
+    protected void initRecyclerView (List<Word> listWords) {
         recyclerView = (RecyclerView) findViewById(R.id.recycleViewCollectionsWords);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        WordCollectionAdapter adapter = new WordCollectionAdapter(getListWords(), this);
+        WordCollectionAdapter adapter = new WordCollectionAdapter(listWords, this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -81,7 +81,17 @@ public class WordCollectionActivity extends AppCompatActivity implements WordCol
     }
 
     @Override
+    public void showAllWord(List<Word> listWords) {
+        initRecyclerView(listWords);
+    }
+
+    @Override
     public void errorNewWord(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void errorAllWord(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
@@ -94,4 +104,5 @@ public class WordCollectionActivity extends AppCompatActivity implements WordCol
     public void onClickTranslateWordDialog(String word) {
 
     }
+
 }

@@ -5,11 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.realm.RealmList;
+import io.realm.RealmResults;
 import ru.tulupov.alex.easyrussian.models.ModelWordIml;
 import ru.tulupov.alex.easyrussian.models.Word;
 import ru.tulupov.alex.easyrussian.views.activities.WordCollectionView;
 import rx.Observable;
 import rx.Observer;
+import rx.functions.Func1;
 
 public class WordCollectionPresenter {
 
@@ -45,7 +48,35 @@ public class WordCollectionPresenter {
                 listWords.add(word);
             }
         });
+    }
 
+    public void showWords(int page) {
+        model.getWords(page).map(new Func1<RealmResults<Word>, List<Word>>() {
+            @Override
+            public List<Word> call(RealmResults<Word> result) {
 
+                List<Word> listWords = new ArrayList<>();
+                for(Word word : result) {
+                    listWords.add(word);
+                }
+
+                return listWords;
+            }
+        }).subscribe(new Observer<List<Word>>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                view.errorAllWord(e.getMessage());
+            }
+
+            @Override
+            public void onNext(List<Word> words) {
+                view.showAllWord(words);
+            }
+        });
     }
 }
