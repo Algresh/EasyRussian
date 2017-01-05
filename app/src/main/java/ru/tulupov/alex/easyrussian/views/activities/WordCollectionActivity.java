@@ -26,6 +26,9 @@ public class WordCollectionActivity extends AppCompatActivity implements WordCol
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
     private WordCollectionPresenter presenter;
+    private DialogAddWord dialog;
+
+    private static final String TAG_WORD_DIALOG = "wordDialog";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +45,8 @@ public class WordCollectionActivity extends AppCompatActivity implements WordCol
             @Override
             public void onClick(View view) {
                 FragmentManager manager = getSupportFragmentManager();
-                DialogAddWord dialog = new DialogAddWord();
-                dialog.show(manager, "manager");
+                dialog = new DialogAddWord();
+                dialog.show(manager, TAG_WORD_DIALOG);
             }
         });
         presenter.showWords(0);
@@ -101,8 +104,18 @@ public class WordCollectionActivity extends AppCompatActivity implements WordCol
     }
 
     @Override
-    public void onClickTranslateWordDialog(String word) {
-
+    public void onClickTranslateWordDialog(String word, String lang) {
+        presenter.translateWord(word, lang);
     }
 
+    @Override
+    public void errorTranslateWord(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showTranslateWord(String word, String lang) {
+//        DialogAddWord dialog = (DialogAddWord) getSupportFragmentManager().findFragmentByTag(TAG_WORD_DIALOG);
+        dialog.showTranslatedWord(word, lang);
+    }
 }

@@ -20,7 +20,7 @@ public class DialogAddWord extends DialogFragment implements View.OnClickListene
     }
 
     public interface TranslateWordClickDialog {
-        void onClickTranslateWordDialog(String word);
+        void onClickTranslateWordDialog(String word, String lang);
     }
 
     private AddWordClickDialog addWordClickDialog;
@@ -50,10 +50,10 @@ public class DialogAddWord extends DialogFragment implements View.OnClickListene
 
     @Override
     public void onClick(View view) {
+        String rus = edtRussian.getText().toString();
+        String eng = edtEnglish.getText().toString();
         switch (view.getId()) {
             case R.id.btnSaveWord:
-                String rus = edtRussian.getText().toString();
-                String eng = edtEnglish.getText().toString();
                 if (!rus.isEmpty() && !eng.isEmpty()) {
                     addWordClickDialog.onClickAddWordDialog(rus, eng);
                 } else {
@@ -62,8 +62,25 @@ public class DialogAddWord extends DialogFragment implements View.OnClickListene
                 }
                 break;
             case R.id.btnTranslateWord:
-//                translateWordClickDialog.onClickTranslateWordDialog();
+                if (!rus.isEmpty() && eng.isEmpty()) {
+                    translateWordClickDialog.onClickTranslateWordDialog(rus, "ru-en");
+                }
+
+                if (rus.isEmpty() && !eng.isEmpty()) {
+                    translateWordClickDialog.onClickTranslateWordDialog(eng, "en-ru");
+                }
+
                 break;
+        }
+    }
+
+    public void showTranslatedWord(String word, String lang) {
+        if (lang.equals("ru-en")) {
+            edtEnglish.setText(word);
+        }
+
+        if (lang.equals("en-ru")) {
+            edtRussian.setText(word);
         }
     }
 }
