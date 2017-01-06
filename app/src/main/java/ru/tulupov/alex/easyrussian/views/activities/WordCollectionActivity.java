@@ -20,7 +20,7 @@ import ru.tulupov.alex.easyrussian.presenters.WordCollectionPresenter;
 import ru.tulupov.alex.easyrussian.views.adapters.WordCollectionAdapter;
 import ru.tulupov.alex.easyrussian.views.fragments.DialogAddWord;
 
-public class WordCollectionActivity extends AppCompatActivity implements WordCollectionView,
+public class WordCollectionActivity extends BaseActivity implements WordCollectionView,
         DialogAddWord.AddWordClickDialog, DialogAddWord.TranslateWordClickDialog {
 
     private RecyclerView recyclerView;
@@ -34,8 +34,9 @@ public class WordCollectionActivity extends AppCompatActivity implements WordCol
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_word_collection);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarWordCollection);
-        setSupportActionBar(toolbar);
+
+        String title = getResources().getString(R.string.toolbarDictionary);
+        initToolbar(title, R.id.toolbarWordCollection);
 
         presenter = new WordCollectionPresenter();
         presenter.onCreate(this);
@@ -51,8 +52,6 @@ public class WordCollectionActivity extends AppCompatActivity implements WordCol
         });
         presenter.showWords(0);
     }
-
-
 
     protected void initRecyclerView (List<Word> listWords) {
         recyclerView = (RecyclerView) findViewById(R.id.recycleViewCollectionsWords);
@@ -78,7 +77,6 @@ public class WordCollectionActivity extends AppCompatActivity implements WordCol
 
     @Override
     public void showNewWord(Word word) {
-//        Toast.makeText(this, word.getEnglishWord() + word.getRussianWord(), Toast.LENGTH_SHORT).show();
         WordCollectionAdapter adapter = (WordCollectionAdapter) recyclerView.getAdapter();
         adapter.addWord(word);
     }

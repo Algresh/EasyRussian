@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 
 import ru.tulupov.alex.easyrussian.R;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener{
+public class MainActivity extends BaseNavigationActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

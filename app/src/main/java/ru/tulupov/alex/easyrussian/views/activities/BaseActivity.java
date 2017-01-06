@@ -22,31 +22,18 @@ public class BaseActivity extends AppCompatActivity {
             toolbar.setTitle(title);
             setSupportActionBar(toolbar);
         }
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-    protected void initNavigationView() {
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout_main);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation);
-        navigationView.setNavigationItemSelectedListener(selectMenuNavigationView());
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
-    private  NavigationView.OnNavigationItemSelectedListener selectMenuNavigationView() {
-        return new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                drawerLayout.closeDrawers();
-
-//                switch (item.getItemId()){
-//
-//                }
-
-                return true;
-            }
-        };
-    }
 }

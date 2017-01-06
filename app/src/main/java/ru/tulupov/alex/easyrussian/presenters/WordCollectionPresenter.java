@@ -65,7 +65,6 @@ public class WordCollectionPresenter {
 
             @Override
             public void onError(Throwable e) {
-                Log.d("my_tag", e.getMessage());
                 view.errorTranslateWord(e.getMessage());
             }
 
@@ -82,8 +81,6 @@ public class WordCollectionPresenter {
                     view.errorTranslateWord("word empty");
 
                 }
-
-                Log.d("my_tag", json);
             }
         });
     }

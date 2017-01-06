@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="@string/menu.main"
+        android:orderInCategory="1"
+        android:id="@+id/navMenuMain"
+        android:icon="@drawable/account"
+        />
 
+    <item
+        android:title="@string/menu.train"
+        android:orderInCategory="1"
+        android:id="@+id/navMenuTrain"
+        android:icon="@drawable/account"
+        />
 </menu>

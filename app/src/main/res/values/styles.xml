@@ -39,6 +39,30 @@
         <item name="android:radius">5dp</item>
     </style>
 
+    <style name="trainLabelEnRu" parent="dictionaryLabel">
+
+    </style>
+
+    <style name="trainLabelRuEn" parent="dictionaryLabel">
+
+    </style>
+
+    <style name="blockTrainEnRu" parent="blockDictionaryMain">
+
+    </style>
+
+    <style name="blockTrainRuEn" parent="blockDictionaryMain">
+
+    </style>
+
+    <style name="blockTrainIdiom" parent="blockDictionaryMain">
+
+    </style>
+
+    <style name="trainLabelIdiom" parent="dictionaryLabel">
+
+    </style>
+
     <style name="blockStatisticMain">
         <item name="android:layout_margin">8dp</item>
         <item name="android:paddingTop">25dp</item>
@@ -110,5 +134,18 @@
     </style>
     <style name="btnTranslateWord"></style>
     <style name="btnSaveWord"></style>
+
+    <style name="fullnameNavHead">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginBottom">36dp</item>
+    </style>
+
+    <style name="englishLevelNavHead">
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
 
 </resources>
