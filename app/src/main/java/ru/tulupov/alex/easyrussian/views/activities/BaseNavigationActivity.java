@@ -36,7 +36,7 @@ public class BaseNavigationActivity extends BaseActivity {
                         break;
 
                     case R.id.navMenuTrain:
-                        intent = new Intent(BaseNavigationActivity.this, TrainActivity.class);
+                        intent = new Intent(BaseNavigationActivity.this, SelectTrainsActivity.class);
                         startActivity(intent);
                         break;
                 }

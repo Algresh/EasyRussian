@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/train_panel_score"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    style="@style/train_panel_score">
+
+    <TextView
+        android:id="@+id/train_panel_score_wrong_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+        android:text="@string/train.panel.score.wrong"
+        style="@style/train_panel_score_label"/>
+
+    <TextView
+        android:id="@+id/train_panel_score_total_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:text="@string/train.panel.score.total"
+        style="@style/train_panel_score_label"/>
+
+    <TextView
+        android:id="@+id/train_panel_score_correct_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:text="@string/train.panel.score.correct"
+        style="@style/train_panel_score_label"/>
+
+    <TextView
+        android:id="@+id/train_panel_score_wrong_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:text="3"
+        style="@style/train_panel_score_digit"/>
+
+    <TextView
+        android:id="@+id/train_panel_score_total_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:text="24"
+        style="@style/train_panel_score_digit"/>
+
+    <TextView
+        android:id="@+id/train_panel_score_correct_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:text="21"
+        style="@style/train_panel_score_digit"/>
+
+</FrameLayout>

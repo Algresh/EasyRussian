@@ -22,7 +22,8 @@
         <activity
             android:name=".views.activities.WordCollectionActivity"
             android:label="@string/title_activity_word_collection"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".views.activities.SelectTrainsActivity" />
         <activity android:name=".views.activities.TrainActivity"></activity>
     </application>
 

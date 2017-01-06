@@ -19,4 +19,8 @@
     <string name="train.label.EnRu">Перевод с английского на русский</string>
     <string name="train.label.RuEn">Перевод с русского на английский</string>
     <string name="train.label.idiom">Фразеологизмы</string>
+    
+    <string name="train.panel.score.wrong">Ошибка</string>
+    <string name="train.panel.score.total">Всего</string>
+    <string name="train.panel.score.correct">Правильно</string>
 </resources>
