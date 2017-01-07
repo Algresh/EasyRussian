@@ -65,6 +65,18 @@ public class TrainPresenter {
         });
     }
 
+    public void answerOnQustion(Word correctWord, Word answer) {
+
+        numTotal++;
+        if (correctWord.getId() == answer.getId()) {
+            numCorrect++;
+            view.showCorrectWord(correctWord, numCorrect, numTotal);
+        } else {
+            numWrong++;
+            view.showWrongWord(correctWord, answer, numWrong, numTotal);
+        }
+    }
+
     public void getWordQuestion() {
 
         if (numTotal < maxWords) {

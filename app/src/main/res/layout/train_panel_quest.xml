@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/train_panel_quest_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        style="@style/train_panel_quest_word"
+        tools:text="Word" />
+
+    <TextView
+        android:id="@+id/train_panel_quest_correctWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        style="@style/train_panel_quest_correctWord"
+        tools:text="Word"
+        android:layout_below="@+id/train_panel_quest_word" />
+
+    <TextView
+        android:id="@+id/train_panel_quest_wrongWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        style="@style/train_panel_quest_wrongWord"
+        tools:text="Word"
+        android:layout_below="@+id/train_panel_quest_correctWord" />
+
+</RelativeLayout>
