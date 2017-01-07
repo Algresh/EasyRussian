@@ -23,4 +23,7 @@
     <string name="train.panel.score.wrong">Ошибка</string>
     <string name="train.panel.score.total">Всего</string>
     <string name="train.panel.score.correct">Правильно</string>
+
+    <string name="train.panel.next.labelNext">Следующий</string>
+    <string name="train.panel.next.labelSkip">Пропустить</string>
 </resources>

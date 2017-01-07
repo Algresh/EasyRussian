@@ -157,12 +157,23 @@
     </style>
 
     <style name="train_panel_score_digit">
-
+        <item name="android:textColor">#000000</item>
     </style>
 
     <style name="train_panel_score_label">
-
+        <item name="android:textColor">#000000</item>
     </style>
+
+    <style name="train_panel_next_labelSkip">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="train_panel_next_labelNext" parent="train_panel_next_labelSkip">
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
 
 
 </resources>
