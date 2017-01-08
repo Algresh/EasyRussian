@@ -1,56 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/train_panel_answer"
     android:layout_width="match_parent"
-    android:layout_height="50dp">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    style="@style/train_panel_answer">
 
-    <FrameLayout
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|top">
+        android:orientation="horizontal"
+        style="@style/train_panel_answer_row">
+
         <TextView
             android:id="@+id/train_panel_answer_leftTop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            tools:text="Answer One"/>
-    </FrameLayout>
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            tools:text="Answer One"
+            style="@style/train_panel_answer_item"/>
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right|top">
         <TextView
             android:id="@+id/train_panel_answer_rightTop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            tools:text="Answer One"/>
-    </FrameLayout>
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            tools:text="Answer One"
+            style="@style/train_panel_answer_item"/>
+    </LinearLayout>
 
-    <FrameLayout
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|bottom">
+        android:orientation="horizontal"
+        style="@style/train_panel_answer_row">
+
         <TextView
             android:id="@+id/train_panel_answer_leftBottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            tools:text="Answer One"/>
-    </FrameLayout>
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            tools:text="Answer One"
+            style="@style/train_panel_answer_item"/>
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom">
         <TextView
             android:id="@+id/train_panel_answer_rightBottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            tools:text="Answer One"/>
-    </FrameLayout>
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            tools:text="Answer One"
+            style="@style/train_panel_answer_item"/>
+    </LinearLayout>
 
-</FrameLayout>
+    <!--<FrameLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <!--</FrameLayout>-->
+
+    <!--<FrameLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="left|bottom">-->
+
+    <!--</FrameLayout>-->
+
+    <!--<FrameLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="right|bottom">-->
+
+    <!--</FrameLayout>-->
+
+</LinearLayout>
