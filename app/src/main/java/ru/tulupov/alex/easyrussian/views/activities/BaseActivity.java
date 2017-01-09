@@ -1,11 +1,13 @@
 package ru.tulupov.alex.easyrussian.views.activities;
 
 import android.content.Intent;
+import android.graphics.Point;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Display;
 import android.view.MenuItem;
 
 import ru.tulupov.alex.easyrussian.R;
@@ -34,6 +36,14 @@ public class BaseActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    protected int getHeightScreen() {
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+
+        return size.y;
     }
 
 }

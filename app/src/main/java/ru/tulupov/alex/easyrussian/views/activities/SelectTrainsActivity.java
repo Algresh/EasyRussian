@@ -22,12 +22,21 @@ public class SelectTrainsActivity extends BaseNavigationActivity {
         initToolbar(toolbar, R.id.toolbarTrain);
         initNavigationView();
 
-        FrameLayout frameLayout = (FrameLayout) findViewById(R.id.blockEnRuTrain);
-        frameLayout.setOnClickListener(new View.OnClickListener() {
+        FrameLayout frameLayoutEnRu = (FrameLayout) findViewById(R.id.blockEnRuTrain);
+        frameLayoutEnRu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SelectTrainsActivity.this, TrainActivity.class);
                 intent.putExtra(TYPE_TRAIN, EN_RU_TRAIN);
+                startActivity(intent);
+            }
+        });
+        FrameLayout frameLayoutRuEn = (FrameLayout) findViewById(R.id.blockRuEnTrain);
+        frameLayoutRuEn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SelectTrainsActivity.this, TrainActivity.class);
+                intent.putExtra(TYPE_TRAIN, RU_EN_TRAIN);
                 startActivity(intent);
             }
         });

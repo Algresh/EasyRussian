@@ -16,7 +16,7 @@
         <TextView
             android:id="@+id/train_panel_answer_leftTop"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:layout_marginRight="8dp"
             tools:text="Answer One"
@@ -25,7 +25,7 @@
         <TextView
             android:id="@+id/train_panel_answer_rightTop"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             tools:text="Answer One"
             style="@style/train_panel_answer_item"/>
@@ -40,7 +40,7 @@
         <TextView
             android:id="@+id/train_panel_answer_leftBottom"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             android:layout_marginRight="8dp"
             tools:text="Answer One"
@@ -49,7 +49,7 @@
         <TextView
             android:id="@+id/train_panel_answer_rightBottom"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
             tools:text="Answer One"
             style="@style/train_panel_answer_item"/>

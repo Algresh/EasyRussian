@@ -1,14 +1,21 @@
 package ru.tulupov.alex.easyrussian.views.fragments;
 
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.util.TypedValue;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import ru.tulupov.alex.easyrussian.Constants;
 import ru.tulupov.alex.easyrussian.R;
 import ru.tulupov.alex.easyrussian.models.Word;
 import ru.tulupov.alex.easyrussian.presenters.TrainPresenter;
@@ -58,6 +65,7 @@ public class TrainFragment extends Fragment implements TrainView, View.OnClickLi
         presenter.onCreate(this);
 
         View view = inflater.inflate(LAYOUT, container, false);
+        initHeightBlockQuest(view);
         wordQuest = (TextView) view.findViewById(R.id.train_panel_quest_word);
         wordCorrect = (TextView) view.findViewById(R.id.train_panel_quest_correctWord);
         wordWrong = (TextView) view.findViewById(R.id.train_panel_quest_wrongWord);
@@ -258,5 +266,35 @@ public class TrainFragment extends Fragment implements TrainView, View.OnClickLi
             }
 
         }
+    }
+
+    protected void initHeightBlockQuest(View view) {
+        int blockHeight = getHeightScreen() - 400;//400 столько занимает все остальное кроме блока с вопросом
+        blockHeight = blockHeight < 120 ? 120 : blockHeight;
+
+        RelativeLayout layout = (RelativeLayout) view.findViewById(R.id.train_panel_quest);
+        layout.setMinimumHeight(dpToPx(blockHeight));
+    }
+
+    protected int getHeightScreen() {
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+
+
+        int dp = pxToDp(size.y);
+        Log.d(Constants.MY_TAG, "dp: " + dp + " px: " + size.y);
+
+        return dp;
+    }
+
+    public int dpToPx(int dp) {
+        DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
+        return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
+    }
+
+    public int pxToDp(int px) {
+        DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
+        return Math.round(px / (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
     }
 }
