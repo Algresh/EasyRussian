@@ -34,7 +34,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|left"
-        android:text="3"
         style="@style/train_panel_score_digit"/>
 
     <TextView
@@ -42,7 +41,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
-        android:text="24"
         style="@style/train_panel_score_digit"/>
 
     <TextView
@@ -50,7 +48,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-        android:text="21"
         style="@style/train_panel_score_digit"/>
 
 </FrameLayout>

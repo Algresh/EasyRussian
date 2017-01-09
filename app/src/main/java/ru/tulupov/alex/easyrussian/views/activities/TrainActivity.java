@@ -1,10 +1,14 @@
 package ru.tulupov.alex.easyrussian.views.activities;
 
 import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import ru.tulupov.alex.easyrussian.R;
+import ru.tulupov.alex.easyrussian.views.fragments.TrainFragment;
 
 public class TrainActivity extends BaseActivity {
 
@@ -40,6 +44,19 @@ public class TrainActivity extends BaseActivity {
         }
 
         initToolbar(toolbar, R.id.toolbarTrain);
+        initFragment();
+
+    }
+
+    private void initFragment() {
+        FragmentManager manager = getSupportFragmentManager();
+        TrainFragment fragmentTrain = new TrainFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(TYPE_TRAIN, currentTypeTrain);
+        fragmentTrain.setArguments(bundle);
+        manager.beginTransaction()
+                .add(R.id.train_container, fragmentTrain)
+                .commit();
 
     }
 }
